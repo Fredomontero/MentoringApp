@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar color="suede">
+    <ion-title>Métodos de pago</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list-header>
+      Métodos de pago
+    </ion-list-header>
+    <ion-list>
+      <ion-item-sliding *ngFor="let card of bankcards_list" >
+        <ion-item >
+          <img src="../assets/imgs/{{card.type}}.png" class="card_item  "> ●●●● {{ card.card_number | slice:11:15 }} </ion-item>
+        <ion-item-options side="left">
+            <button ion-button color="danger" (click)="deleteCard(card)">
+              <ion-icon name="trash"></ion-icon>
+              Borrar
+            </button>
+          </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+    <button block ion-button color="suede" (click)="addNewCard()"> + Agregar otra tarjeta </button>
+    <!-- <p>Proyecto 2018. Todos los derechos reservados. Montero Martínez Christian Alfredo y christian.montero@uabc.edu.mx</p> -->
+  </ion-content>

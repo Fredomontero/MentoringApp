@@ -1,0 +1,25 @@
+
+<ion-header>
+  <ion-navbar color="suede" hideBackButton="true">
+    <ion-title>Asesoria activa</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-card>
+      <img src="../assets/imgs/classroom.png"/>
+      <ion-card-content>
+        <ion-card-title>
+          {{appointment.subject}}
+          </ion-card-title>
+        <h2>Asesor: {{ username }}</h2>
+      </ion-card-content>
+    </ion-card>
+    <div padding>
+      <button block ion-button color="suede" (click)="finishAppointment()">Terminar</button>
+      <button block ion-button color="ipa" (click)="cancelAppointment()">Cancelar</button>
+    </div>
+    <!-- <p>Proyecto 2018. Todos los derechos reservados. Montero Martínez Christian Alfredo y christian.montero@uabc.edu.mx</p> -->
+</ion-content>

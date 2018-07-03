@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar color="suede">
+    <ion-title>Seleccionar fecha y hora</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Fecha</ion-label>
+      <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="appointment.date"></ion-datetime>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Hora inicio</ion-label>
+      <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="appointment.start"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Hora fin</ion-label>
+      <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="appointment.end"></ion-datetime>
+    </ion-item>
+
+
+  </ion-list>
+
+  <br>
+  <button block ion-button color="suede" (click)="sendRequest()">Solicitar Asesoría</button>
+  <!-- <p>Proyecto 2018. Todos los derechos reservados. Montero Martínez Christian Alfredo y christian.montero@uabc.edu.mx</p> -->
+</ion-content>

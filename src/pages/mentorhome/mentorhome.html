@@ -1,0 +1,65 @@
+<ion-header no-border>
+  <ion-toolbar color="suede">
+      <button ion-button menuToggle="right" (click)="toogleMenu()"><ion-icon name="menu"></ion-icon></button>
+    <ion-title >Bienvenido!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list-header>
+    Próximas asesorías
+  </ion-list-header>
+  <ion-list>
+    <ion-item-sliding *ngFor="let appointment of appointment_list | orderBy:'date, start'">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="../../assets/imgs/default_user.png">
+        </ion-avatar>
+        <h2> Estudiante: {{ appointment.student }}</h2>
+        <h3> Materia: {{appointment.subject}} </h3>
+        <h4>Fecha: {{appointment.date}}</h4>
+        <h4>Hora: {{ appointment.start }}</h4>
+      </ion-item>
+      <ion-item-options side="left">
+          <button ion-button color="secondary" (click)="startAppointment(appointment)">
+            <ion-icon name="play"></ion-icon>
+            Iniciar
+          </button>
+          <button ion-button color="danger" (click)="removeAppointment(appointment)">
+            <ion-icon name="trash"></ion-icon>
+            Cancelar
+          </button>
+        </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-list-header>
+      Peticiones de asesorías
+  </ion-list-header>
+  <ion-list>
+      <ion-item-sliding *ngFor="let request of request_list | orderBy:'date, start'">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="../../assets/imgs/default_user.png">
+        </ion-avatar>
+        <h2> Estudiante: {{ request.student }}</h2>
+        <h3> Materia: {{request.subject}} </h3>
+        <h4>Fecha: {{request.date}}</h4>
+        <h4>Hora: {{ request.start }}</h4>
+      </ion-item>
+      <ion-item-options side="left">
+          <button ion-button color="secondary" (click)="acceptRequest(request)">
+            <ion-icon name="checkmark"></ion-icon>
+            Aceptar
+          </button>
+          <button ion-button color="danger" (click)="deleteRequest(request)">
+            <ion-icon name="close"></ion-icon>
+            Rechazar
+          </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <!-- <p>Proyecto 2018. Todos los derechos reservados. Montero Martínez Christian Alfredo y christian.montero@uabc.edu.mx</p> -->
+</ion-content>

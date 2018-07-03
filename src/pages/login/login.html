@@ -1,0 +1,23 @@
+<ion-content padding>
+  <br><br>
+  <ion-list>
+    <img src="../assets/imgs/mylogo.png" class="center"/>
+    <br><br>
+    <!-- This is fot the email -->
+    <ion-item>
+      <ion-label floating>email</ion-label>
+      <ion-input type="text" #email></ion-input>
+    </ion-item>
+    <!-- This is for the password -->
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" #password></ion-input>
+    </ion-item>
+  </ion-list>
+  
+    <div padding>
+      <button block ion-button color="suede" (click)="login()">Login</button>
+      <button block ion-button color="ipa" (click)="signup()">Sign Up</button>
+    </div>
+    <!-- <p>Proyecto 2018. Todos los derechos reservados. Montero Martínez Christian Alfredo y christian.montero@uabc.edu.mx</p> -->
+  </ion-content>

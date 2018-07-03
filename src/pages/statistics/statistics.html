@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-navbar color="suede">
+      <ion-title>Mis estadísticas</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <img src="../assets/imgs/mentor.png"/>
+    <ion-card-content>
+    <ion-card-title>{{ username }}</ion-card-title>
+  </ion-card-content>
+  </ion-card>
+  <div class="centered_div">
+    <img src="../../assets/imgs/star_0.png" id="s0">
+    <img src="../../assets/imgs/star_0.png" id="s1">
+    <img src="../../assets/imgs/star_0.png" id="s2">
+    <img src="../../assets/imgs/star_0.png" id="s3">
+    <img src="../../assets/imgs/star_0.png" id="s4">
+  </div>
+
+  <ion-list-header>
+    Comentarios y calificaciones
+  </ion-list-header>
+  <ion-list>
+    <ion-item-sliding *ngFor="let comment of comments_list" >
+      <ion-item >
+        <ion-avatar item-start>
+          <img src="../assets/imgs/subject.png">
+        </ion-avatar>
+        <h2>{{ role }}: {{ comment.student }}</h2>
+        <h3>Materia: {{ comment.subject }}</h3>
+        <h4>Fecha: {{ comment.date }}</h4>
+        <p> {{ comment.comment }} </p>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+  <!-- <p>Proyecto 2018. Todos los derechos reservados. Montero Martínez Christian Alfredo y christian.montero@uabc.edu.mx</p> -->
+</ion-content>

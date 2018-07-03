@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-navbar color="suede">
+      <ion-title>Agregar nueva tarjeta</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label> <ion-icon name="card"></ion-icon></ion-label>
+    <ion-input clearInput type="password" maxlength="16" [(ngModel)]="card.card_number"></ion-input>
+  </ion-item>
+  <ion-item>       
+    <ion-input clearInput type="text" placeholder="MM/YY" maxlength="4" [(ngModel)]="card.exp_date"></ion-input>
+  </ion-item>
+  <ion-item>       
+    <ion-input clearInput type="text" placeholder="CVV" maxlength="3" [(ngModel)]="card.cvv_number"></ion-input>
+  </ion-item>
+  <button block ion-button color="suede" (click)="saveCard()"> Agregar </button>
+  <!-- <p>Proyecto 2018. Todos los derechos reservados. Montero Martínez Christian Alfredo y christian.montero@uabc.edu.mx</p> -->
+</ion-content>
